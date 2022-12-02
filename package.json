@@ -4,8 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css dist/ && copyfiles .env.ref dist/ && npm run rename",
-    "rename": "node -e \"require('fs').rename('dist/.env.ref','dist/.env', (err) => { (err? console.log(err) : console.log('Rename complete!') ) } )\"",
+    "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css dist/",
     "build": "rimraf ./dist && tsc && npm run copy-files",
     "start": "npm run build && npm run copy-files && node dist/index.js",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
