@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="start">
+        <div class="text">SEARCHING IN</div>
+        <input id="inputSearchWork">
+        <div id="listResult"></div>
+        <hr class="solid">
+        <table>
+            <tr>
+                <td style="max-width:48w;min-width:48vw;">
+                    <span class="boss"><b>NODEJS</b></span>
+                    <br>
+                    <!-- 1 -->
+                    pkg . -t node14-win-x64 --no-bytecode --public-packages "*"
+                    <br>
+                    <br>
+                    <hr class="solid">
+                    <span class="boss"><b>ANGULAR</b></span>
+                    <br>
+                    <!-- 1 -->
+                    ng build --aot --prod --output-hashing=all --optimization --base-href=/web/
+                    <br>
+                    <br>
+                    <hr class="solid">
+                    <span class="boss"><b>IONIC FRAMEWORK</b></span>
+                    <div class="">ionic build
+                        <div class="dot">ionic cap add android</div>
+                        <div class="dot">ionic cap copy</div>
+                        <div class="dot">ionic cap sync</div>
+                        <div class="dot">ionic cap build android</div>
+                    </div>
+                    <br>
+                    <hr class="solid">
+                    <span class="boss"><b>PM2 Jessety</b></span>
+                    <br>
+                    npm run configure
+    </div>
+    <div class="dot">
+        npm run configure-policy
+    </div>
+    <div class="dot">
+        npm run setup
+    </div>
+    <br>
+    <hr class="solid">
+    <div class="boss"><b>ANDROID</b></div>
+    <div class="text"><b>$__ADB__</b></div>
+    <div class="text">settings put global captive_portal_detection_enabled 0</div>
+    <div class="text"><b>$__EXCLUDE FILTER LOGCAT__</b></div>
+    <div class="text">^(?!.*(GasService|GED))</div>
+    <br>
+    <hr class="solid">
+    <div class="boss"><b>ELECTRON JS 13</b></div>
+    <div class="text"><b>$__ADB__</b></div>
+    <div class="text"></div>
+    <div class="text"><b>$__EXCLUDE FILTER LOGCAT__</b></div>
+    <div class="text"></div>
+
+    </td>
+    <td style="display:flex; justify-content: start; min-width: 2vw;">
+
+    </td>
+    <td style="max-width: 48vw;min-width: 48vw;">
+
+        <span class="boss"><b>MYSQL</b></span><br>
+        <b>$__EVENT SCHEDULE__</b>
+        <br>
+        <!-- 1 -->
+        DROP EVENT IF EXISTS `audit_rotate_event`;<br>
+        CREATE EVENT `my_event` ON SCHEDULE EVERY 10 SECOND <br>
+        STARTS '2010-01-01 00:00:00' <br>
+        DO <br>
+        DELETE FROM cell_8_sputter.sputter_data where timestampdiff(minute,`created`,now()) > 1;<br>
+        ALTER EVENT `audit_rotate_event` ON COMPLETION PRESERVE ENABLE;<br>
+        <br>
+        <hr class="dot">
+        ALTER USER 'root'@'localhost/%' IDENTIFIED WITH mysql_native_password BY 'password';<br>
+        FLUSH PRIVILEGES;<br>
+        <b>$__TIME QUERY__</b>
+        <br>
+        SELECT count(*) FROM cell_data WHERE timestampdiff(day,created,now()) < 30<br>
+            <br>
+            <hr class="solid">
+    </td>
+    </tr>
+    </table>
+    </div>
+    <script src="./api/searchQuery.js"></script>
+</body>
+
+</html>
