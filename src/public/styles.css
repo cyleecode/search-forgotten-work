@@ -1,0 +1,62 @@
+body {
+    font: 16px Comic Sans MS, cursive;
+    color: rgb(179, 179, 179);
+    background-color: black;
+    /* pointer-events: none; */
+    caret-color: transparent;
+}
+
+.boss {
+    font: 30px Comic Sans MS, cursive;
+}
+
+/* body{font:16px Verdana, sans-serif;} */
+div.start {
+    display: flex;
+    flex-direction: column;
+}
+
+div.text {
+    white-space: pre-wrap;
+}
+
+div.dot {
+    border: 0;
+    border-top: 2px dotted rgb(199, 202, 32);
+    margin: 0;
+    padding: 0;
+}
+
+hr.solid {
+    border: 0;
+    border-top: 3px solid rgb(10, 139, 27);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+hr.dot {
+    border: 0;
+    border-top: 2px dotted rgb(199, 202, 32);
+    margin: 0;
+    padding: 0;
+}
+
+tr {
+    display: flex;
+    justify-content: start;
+    padding: 0;
+    margin: 0;
+}
+
+table {
+    border-spacing: 0;
+}
+
+.foundPath{
+    font-size: small;
+}
+
+.foundName{
+    font-size: larger;
+}
